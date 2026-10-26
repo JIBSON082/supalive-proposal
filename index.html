@@ -75,7 +75,14 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 #cur.on{opacity:1}#cur.h{width:64px;height:64px;margin:-32px 0 0 -32px}
 #cur span{opacity:0}#cur.h span{opacity:1}
 /* nav */
-#nav{position:fixed;top:calc(10px + env(safe-area-inset-top));left:50%;width:min(calc(100% - 20px),1140px);transform:translateX(-50%);z-index:150;display:flex;align-items:center;gap:12px;padding:7px 7px 7px 18px;border-radius:99px;background:var(--pu);color:#fff;box-shadow:0 12px 30px -12px rgba(125,31,209,.7)}
+#nav{position:fixed;top:calc(10px + env(safe-area-inset-top));left:50%;width:min(calc(100% - 20px),1140px);transform:translateX(-50%);z-index:150;display:flex;align-items:center;gap:12px;padding:7px 7px 7px 18px;border-radius:99px;background:linear-gradient(120deg,#8E2EE6 0%,#7D1FD1 45%,#6A16B8 100%);color:#fff;box-shadow:0 14px 34px -12px rgba(125,31,209,.75),inset 0 1.5px 0 rgba(255,255,255,.28),inset 0 -2px 0 rgba(20,8,31,.18);animation:navin 1s var(--spring) 2.6s both;overflow:hidden}
+#nav::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.22) 50%,transparent 70%);transform:translateX(-120%);animation:sheen 6s ease-in-out 4s infinite;pointer-events:none}
+@keyframes navin{from{transform:translate(-50%,-140%)}to{transform:translate(-50%,0)}}
+@keyframes sheen{0%,60%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.nb{position:relative;overflow:hidden}.nb::after{content:'';position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.8),transparent);transform:skewX(-18deg);animation:nbs 4.2s ease-in-out 3.5s infinite}
+@keyframes nbs{0%,55%{left:-60%}100%{left:130%}}
+.bg svg.rgp{position:absolute;inset:-3px;width:48px;height:48px;transform:rotate(-90deg);pointer-events:none}
+.bg svg.rgp circle{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-dasharray:132;stroke-dashoffset:132;opacity:.55}
 .logo{display:block;margin-right:auto;flex:none}
 .logo img{height:38px;width:auto;transition:transform .5s var(--spring)}
 .logo:hover img{transform:rotate(-3deg) scale(1.05)}
@@ -121,7 +128,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .pill i svg{width:15px}
 .h1{font:700 var(--fs,64px)/.94 var(--disp);letter-spacing:-.025em;margin:22px 0 20px}
 .h1 .ln{display:block;overflow:hidden;padding:.06em 0 .14em;margin:-.06em 0 -.14em}
-.h1 .ln span{display:inline-block;transform:translateY(118%) rotate(5deg);transform-origin:0 100%;transition:transform 1.2s var(--spring);transition-delay:calc(var(--i)*110ms + 250ms)}
+.h1 .ln span{white-space:nowrap;display:inline-block;transform:translateY(118%) rotate(5deg);transform-origin:0 100%;transition:transform 1.2s var(--spring);transition-delay:calc(var(--i)*110ms + 250ms)}
 .ready .h1 .ln span{transform:none}
 .h1 b{position:relative;display:inline-block;color:var(--ink);z-index:0;font-weight:700}
 .h1 b::before{content:'';position:absolute;z-index:-1;left:-.12em;right:-.12em;top:.08em;bottom:-.02em;background:var(--lime);border-radius:.45em .6em .5em .55em/.55em .45em .6em .5em;transform:scaleX(0);transform-origin:left;transition:transform 1s var(--out) 1.2s}
@@ -134,7 +141,15 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hmeta span{display:inline-flex;align-items:center;gap:8px}
 .hmeta span::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--pu)}
 .hvis{position:relative;display:grid;place-items:center}
-.hvis .bw{width:min(44vw,300px);perspective:1000px}
+.stg{--s:min(36vw,520px);position:relative;width:var(--s);height:var(--s);display:grid;place-items:center}
+.stg .sb2{position:absolute;width:70%;aspect-ratio:1;background:var(--lime);border-radius:46% 54% 50% 50%/52% 46% 54% 48%;animation:flo 14s ease-in-out infinite}
+.stg .rg{position:absolute;inset:0;width:100%;height:100%;animation:spin 28s linear infinite;overflow:visible}
+.stg .rg text{font:700 15.5px var(--disp);letter-spacing:.1em;fill:var(--ink)}
+.stg .bw{position:relative;z-index:2;height:68%;perspective:1000px;animation:bob 6s ease-in-out infinite;transform-origin:50% 80%}
+.stg .bw .bt{height:100%;width:auto;display:block}
+.stg .dr{left:8%;top:18%}.stg .dr.b{left:auto;right:10%;top:56%;color:var(--ink)}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-12px) rotate(5deg)}}
+.stg.ps2{display:none}
 .hero .bt{filter:drop-shadow(0 30px 30px rgba(125,31,209,.35))}
 .hblob{position:absolute;z-index:0;border-radius:50%;pointer-events:none}
 .hblob.a{width:min(120vw,820px);aspect-ratio:1;right:-30%;top:-10%;background:var(--lime);border-radius:44% 56% 52% 48%/50% 44% 56% 50%;animation:flo 16s ease-in-out infinite}
@@ -152,16 +167,24 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media(min-width:900px){
   .hero{padding:120px 0 70px}.scl{display:flex}
   .hg{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px}
-  .hvis .bw{width:min(30vw,380px)}
+  .hvis .stg{--s:min(38vw,540px)}
 }
 @media(max-width:899px){
   .hero{display:block;min-height:0;padding:0}
   .hg{display:block}
   .ht{position:relative;height:100vh;height:100svh}
-  .ht .fit{position:absolute;left:0;top:0;width:350px;transform-origin:0 0;display:flex;flex-direction:column;align-items:flex-start}
-  .fit .h1{margin:18px 0 14px}.fit .cta{margin-top:20px}
+  .ht .fit{position:absolute;left:0;top:0;width:350px;transform-origin:0 0;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .fit .h1{margin:16px 0 4px}.fit .cta{margin-top:16px;justify-content:center;flex-wrap:nowrap;width:100%}
+  .fit .cta .btn{flex:1 1 auto;justify-content:center;padding-left:18px;padding-right:18px;white-space:nowrap}
+  .fit .sub{font-size:14.5px;line-height:1.4;max-width:21em;margin:0 auto}
   .fit .hmeta,.fit .sub2{display:none}
   .hvis{display:none}
+  .stg.ps2{display:grid;--s:250px;margin:0 auto 4px}
+  .stg .rg text{font-size:14.5px}
+  .hblob.a,.hblob.b{display:none}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(120% 60% at 50% 62%,rgba(208,255,0,.28),transparent 65%),radial-gradient(90% 40% at 100% 0,rgba(125,31,209,.14),transparent 60%);pointer-events:none}
+  .hero + .mq{margin-top:30px}
+  .fl{display:none}
 }
 /* marquee */
 .mq{background:var(--lime);color:var(--pu);overflow:hidden;padding:20px 0;position:relative;z-index:3;transform:rotate(-1.4deg) skewX(var(--sk,0deg));margin:-10px -10px 0;box-shadow:0 10px 0 var(--ink)}
@@ -498,7 +521,7 @@ html:not(.fx) .esteps{min-height:0}
 .sf .btn{flex:1 1 220px;justify-content:center}
 /* compare label */
 .cmp{background:var(--pu);color:#fff;overflow:hidden}
-.cmp .h2{color:#fff}
+.cmp .h2{color:#fff}.cmp .h2 em{color:var(--lime)}
 .lblcard{margin-top:44px;background:#fff;color:var(--ink);border:4px solid var(--ink);border-radius:26px;padding:20px clamp(14px,3vw,32px) 26px;max-width:900px;box-shadow:10px 12px 0 var(--lime);position:relative}
 .lc-h{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;border-bottom:10px solid var(--ink);padding-bottom:10px}
 .lc-h h3{font:700 clamp(30px,6vw,52px)/.95 var(--disp);letter-spacing:-.02em}
@@ -639,7 +662,7 @@ footer .cp{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,25
   <a class="logo" href="#top" aria-label="Sup-Alive proposal, home"><img data-img="logodark" alt="Sup-Alive" width="1100" height="347"></a>
   <div class="lk" id="lk"><a href="#brief">The brief</a><a href="#blends">Blends</a><a href="#compare">Compare</a><a href="#demo">Demo</a><a href="#time">Timeline</a><a href="#terms">Terms</a></div>
   <a class="nb" href="#blends"><span class="s1">Choose a blend</span><span class="s2">Choose</span></a>
-  <button class="bg" id="bg" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+  <button class="bg" id="bg" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg class="rgp" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21"/></svg><i></i><i></i></button>
 </nav>
 <div id="menu" aria-hidden="true">
   <a href="#brief"><span>01</span>The brief</a><a href="#engine"><span>02</span>See it run</a><a href="#blends"><span>03</span>Blends</a><a href="#compare"><span>04</span>Compare</a><a href="#demo"><span>05</span>Try the demo</a><a href="#time"><span>06</span>Timeline</a><a href="#terms"><span>07</span>Terms</a>
@@ -655,14 +678,12 @@ footer .cp{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,25
     <div class="ht"><div class="fit">
       <div class="pill hv" style="--d:200ms"><i><svg viewBox="0 0 100 100.9"><use href="#leaf"/></svg></i>Website proposal for Abby Sunmola, CEO &amp; Founder</div>
       <h1 class="h1" id="h1" aria-label="Let's make your zobo come alive online."><span class="ln"><span style="--i:0">Let's make</span></span><span class="ln"><span style="--i:1">your zobo</span></span><span class="ln"><span style="--i:2"><b>come alive</b></span></span><span class="ln"><span style="--i:3">online.</span></span></h1>
+      <div class="stg ps2 hv" style="--d:700ms" data-stage></div>
       <p class="sub hv" style="--d:1200ms">A website that educates, pushes sales, issues invoices and receipts, and runs retail and wholesale orders in one marketplace.</p>
       <div class="cta hv" style="--d:1350ms"><a class="btn l mag" href="#blends">See the three blends <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn g mag" href="#brief">The brief</a></div>
       <div class="hmeta hv" style="--d:1500ms"><span>October 23, 2026</span><span>Agege, Lagos</span><span>3 blends, 3 to 8 weeks</span></div>
     </div></div>
-    <div class="hvis hv" style="--d:900ms" id="hvis"><div class="bw" id="hb"></div>
-      <svg class="dr" style="left:4%;top:12%;transform:rotate(-20deg)" viewBox="0 0 40 60" aria-hidden="true"><use href="#drop"/></svg>
-      <svg class="dr" style="right:8%;top:30%;color:var(--ink);animation-delay:-3s;transform:rotate(18deg)" viewBox="0 0 40 60" aria-hidden="true"><use href="#drop"/></svg>
-    </div>
+    <div class="hvis hv" style="--d:900ms" id="hvis"><div class="stg" data-stage></div></div>
   </div>
   <div class="scl" aria-hidden="true"><span>Scroll</span><i></i></div>
 </header>
@@ -896,7 +917,9 @@ const BCSS=document.createElement('style');
 BCSS.textContent='.bt{overflow:visible}.bt .wv{animation:wvs 3.4s linear infinite}.bt .lq{transition:transform 1.4s cubic-bezier(.16,1,.3,1)}.bt .bub{animation:bup 4s ease-in infinite;transform-box:fill-box;transform-origin:center}@keyframes wvs{to{transform:translateX(-100px)}}@keyframes bup{0%{transform:translateY(40px);opacity:0}15%{opacity:.9}100%{transform:translateY(-110px);opacity:0}}';
 document.head.appendChild(BCSS);
 function setLevel(svg,level){const g=$('.lq',svg);if(g)g.style.transform='translateY('+(406-level*296).toFixed(1)+'px)'}
-$('#hb').innerHTML=bottle(.74,{logo:1});$('#hb svg').style.color='#14081f';
+const RGT='SUP-ALIVE \u2726 A TASTE OF NATURE TO COME ALIVE \u2726 ZOBO \u2726 ';
+$$('[data-stage]').forEach((s,i)=>{s.innerHTML='<i class="sb2"></i><svg class="rg" viewBox="0 0 300 300" aria-hidden="true"><defs><path id="rp'+i+'" d="M150,150 m-128,0 a128,128 0 1,1 256,0 a128,128 0 1,1 -256,0"/></defs><text><textPath href="#rp'+i+'" textLength="796" lengthAdjust="spacing">'+RGT+'</textPath></text></svg><div class="bw">'+bottle(.74,{logo:1})+'</div><svg class="dr" viewBox="0 0 40 60" aria-hidden="true"><use href="#drop"/></svg><svg class="dr b" viewBox="0 0 40 60" aria-hidden="true"><use href="#drop"/></svg>';$('.bw svg',s).style.color='#14081f'});
+$('#hvis .bw').id='hb';
 $('#pb').innerHTML=bottle(.06,{logo:1});
 $('#db').innerHTML=bottle(.5,{text:'Zobo'});
 
@@ -1041,10 +1064,10 @@ function start(){if(GO.ready)return;GO.ready=true;document.body.classList.add('r
 
 /* ---------- pinned pour scene + scroll effects ---------- */
 (function(){
-  const prog=$('#prog'),gauge=$('#gauge i'),pin=$('#brief'),pis=$$('.pi',pin),pd=$$('#pdots i'),pcap=$('#pcap'),pbs=$('#pb svg'),hb=$('#hvis');
+  const rgc=$('.bg .rgp circle'),prog=$('#prog'),gauge=$('#gauge i'),pin=$('#brief'),pis=$$('.pi',pin),pd=$$('#pdots i'),pcap=$('#pcap'),pbs=$('#pb svg'),hb=$('#hvis');
   const hero=$('#top'),ht=$('.ht'),mq=$('.mq');let tk=false,lastIdx=-1,lastLv=-1;
   function upd(){tk=false;const vh=innerHeight,y=scrollY,pr=clamp(y/(html.scrollHeight-vh||1),0,1);
-    prog.style.transform='scaleX('+pr+')';gauge.style.transform='scaleY('+pr+')';
+    prog.style.transform='scaleX('+pr+')';if(rgc)rgc.style.strokeDashoffset=(132*(1-pr)).toFixed(1);gauge.style.transform='scaleY('+pr+')';
     if(reduce)return;
     const r=pin.getBoundingClientRect();
     if(r.bottom>-vh*.2&&r.top<vh*1.1){
