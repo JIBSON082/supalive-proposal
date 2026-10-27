@@ -62,7 +62,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 #splash{background:var(--pu);place-items:center;border-radius:0 0 50% 50%/0 0 12% 12%}
 #splash.out,#splash2.out{transform:translateY(-112%)}
 #splash .sl{width:min(78vw,520px);height:auto;animation:pop 1.1s var(--spring) both .15s}
-#splash small{position:absolute;bottom:9vh;left:0;right:0;text-align:center;font:600 12px var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--lime);animation:fadeup .8s ease both .7s}
+#splash small{position:absolute;bottom:9vh;left:0;right:0;text-align:center;font:700 clamp(15px,4.2vw,20px) var(--body);letter-spacing:.12em;padding:0 14px;text-transform:uppercase;color:var(--lime);animation:fadeup .8s ease both .7s}
 @keyframes pop{0%{transform:scale(.3) rotate(-8deg);opacity:0}100%{transform:none;opacity:1}}
 @keyframes fadeup{0%{opacity:0;transform:translateY(14px)}100%{opacity:1;transform:none}}
 #wipe{position:fixed;inset:0;z-index:550;background:var(--pu);transform:translateY(105%);border-radius:50% 50% 0 0/12% 12% 0 0;display:grid;place-items:center;pointer-events:none}
