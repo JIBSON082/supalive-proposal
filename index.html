@@ -562,20 +562,21 @@ html:not(.fx) .esteps{min-height:0}
 .mode span.on{background:var(--pu);color:#fff}
 .mode span.on.w{background:var(--ink);color:var(--lime)}
 .paperw{perspective:1300px;display:grid;place-items:center}
-.paper{position:relative;width:min(100%,400px);background:#fff;border-radius:6px 6px 0 0;padding:26px 24px 36px;box-shadow:0 30px 50px -26px rgba(20,8,31,.65);transform:rotate(1.5deg);transition:transform .8s var(--spring);transform-style:preserve-3d}
+.paper{position:relative;width:min(100%,430px);background:#fff;border-radius:6px 6px 0 0;padding:26px 24px 88px;box-shadow:0 30px 50px -26px rgba(20,8,31,.65);transform:rotate(1.5deg);transition:transform .8s var(--spring);transform-style:preserve-3d}
 .paper::after{content:'';position:absolute;left:0;right:0;bottom:-14px;height:14px;background:linear-gradient(135deg,#fff 50%,transparent 50%) 0 0/20px 14px,linear-gradient(225deg,#fff 50%,transparent 50%) 0 0/20px 14px}
 .paper.flip{transform:rotate(-1.5deg) rotateY(360deg)}
-.ph{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:16px}
-.ph img{height:44px;width:auto}
-.ph h5{font:700 26px/1 var(--disp);color:var(--pu);text-align:right}
-.ph small{display:block;font:500 11px var(--body);color:var(--mut);text-align:right;margin-top:3px;letter-spacing:.06em}
-.paper.w .ph h5{color:var(--ink)}
+.rh{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:16px}
+.rh img{height:44px;width:auto}
+.rh h5{font:700 26px/1 var(--disp);color:var(--pu);text-align:right;white-space:nowrap}
+.rh small{display:block;font:500 11px var(--body);color:var(--mut);text-align:right;margin-top:3px;letter-spacing:.04em;white-space:nowrap}
+.rh>div{flex:none}.rh img{flex:0 1 auto;min-width:0}
+.paper.w .rh h5{color:var(--ink)}
 .pr2{display:flex;justify-content:space-between;gap:10px;font:500 13.5px var(--body);padding:9px 0;border-bottom:1px dashed rgba(20,8,31,.3)}
 .pr2.h{font:600 11px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
 .pt2{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;font:700 17px var(--disp)}
 .pt2 b{font-size:30px;letter-spacing:-.02em}
-.stamp{position:absolute;right:20px;bottom:46px;border:3px solid var(--pu);color:var(--pu);border-radius:10px;padding:4px 12px;font:700 20px var(--disp);transform:rotate(-12deg);letter-spacing:.06em;opacity:.9}
-.paper.w .stamp{border-color:var(--ink);color:var(--ink)}
+.pstamp{position:absolute;right:22px;bottom:30px;border:3px solid var(--pu);color:var(--pu);border-radius:10px;padding:4px 12px;font:700 20px var(--disp);transform:rotate(-12deg);letter-spacing:.06em;opacity:.9}
+.paper.w .pstamp{border-color:var(--ink);color:var(--ink)}
 .smp{margin-top:18px;font:500 12px/1.5 var(--body);max-width:30em}
 @media(min-width:900px){.dg{grid-template-columns:.9fr 1.1fr;gap:70px}}
 /* timeline */
@@ -768,9 +769,9 @@ footer .cp{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,25
     <div class="lc-h"><h3>Website<br>Facts</h3><small>Serving size: one Sup-Alive website. Amounts per project.</small></div>
     <div class="lc-cols"><span>What you get</span><span class="s">Starter</span><span class="g">Growth</span><span>Complete</span></div>
     <div id="lrows"></div>
-    <div class="lr big thick"><span>Price</span><span>₦240,000</span><span>₦390,000</span><span>₦650,000</span></div>
+    <div class="lr big thick"><span>Price</span><span>₦240,000</span><span>₦400,000</span><span>₦650,000</span></div>
     <div class="lr big"><span>Timeline</span><span>3 wks</span><span>5 wks</span><span>8 wks</span></div>
-    <p class="lc-f">Dollar equivalents: about $168, $273 and $455. Each blend includes everything in the one before it, except the WhatsApp order flow, which Growth and Complete replace with real checkout.</p>
+    <p class="lc-f">Dollar equivalents: about $168, $280 and $455. Each blend includes everything in the one before it, except the WhatsApp order flow, which Growth and Complete replace with real checkout.</p>
   </div>
 </div></section>
 
@@ -788,12 +789,12 @@ footer .cp{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,25
     </div>
     <div class="paperw rv" style="--d:120ms">
       <div class="paper" id="paper">
-        <div class="ph"><img data-img="logo" alt="Sup-Alive" width="1500" height="473"><div><h5 id="pdoc">Receipt</h5><small id="pno">RCPT 0001 · SAMPLE</small></div></div>
+        <div class="rh"><img data-img="logo" alt="Sup-Alive" width="1500" height="473"><div><h5 id="pdoc">Receipt</h5><small id="pno">RCPT 0001 · SAMPLE</small></div></div>
         <div class="pr2 h"><span>Item</span><span>Amount</span></div>
         <div class="pr2"><span id="pl1">6 × Zobo 50cl @ ₦1,200</span><span id="pa1">₦7,200</span></div>
         <div class="pr2"><span id="pl2">Pricing</span><span id="pa2">Retail</span></div>
         <div class="pt2"><span>Total</span><b id="ptot">₦7,200</b></div>
-        <div class="stamp" id="pst">PAID</div>
+        <div class="pstamp" id="pst">PAID</div>
       </div>
     </div>
   </div>
@@ -867,17 +868,17 @@ $('#by').innerHTML=CONFIG.preparedBy+'<br><a href="tel:+'+CONFIG.whatsapp+'">070
 /* ---------- data ---------- */
 const TIERS=[
  {id:'starter',name:'Starter',tag:'Brand Showroom + Education',price:240000,usd:168,weeks:3,fill:.34,
-  blurb:'A clean, brand-matched online showroom of every Sup-Alive blend, carrying the brand story and "why hibiscus" education content. Orders go to WhatsApp to confirm and pay. No accounts, no database, fast to launch.',
-  short:['Cart and WhatsApp order flow','Brand story and "why Sup-Alive" education','Custom design matched to your brand guidelines','12 months free maintenance'],
-  inc:['Cart and WhatsApp order flow','Brand story and "why Sup-Alive" education content','Menu set up by the developer at launch (no admin panel)','Custom branded design matched to brand guidelines','Mobile-first responsive layout','Domain setup and hosting deployment','12 months free maintenance'],
-  pages:['Home','Our Story','Shop','Why Zobo','Contact','FAQ'],
-  brk:[['UI/UX Design',75000],['Frontend Development',90000],['WhatsApp Order Flow',35000],['Deployment and Domain',40000]]},
- {id:'growth',name:'Growth',tag:'Sales Engine + Real Payments',price:390000,usd:273,weeks:5,fill:.67,rec:true,
+  blurb:'A clean, brand-matched online showroom of every Sup-Alive blend, carrying the brand story and "why hibiscus" education content. Orders go to WhatsApp, with bank transfer details and a downloadable order slip for every customer. No accounts, no database, fast to launch.',
+  short:['Cart and WhatsApp order flow','Bank transfer details with copy button','Downloadable branded order slip','Brand story and "why Sup-Alive" education'],
+  inc:['Cart and WhatsApp order flow','Bank transfer details card with a copy button and "send proof on WhatsApp"','Downloadable branded order slip (image or PDF) for every order','Brand story and "why Sup-Alive" education content','Menu set up by the developer at launch (no admin panel)','Custom branded design matched to brand guidelines','Mobile-first responsive layout','Domain setup and hosting deployment','12 months free maintenance'],
+  pages:['Home','Our Story','Shop','Cart and Order Slip','Why Zobo','Contact','FAQ'],
+  brk:[['UI/UX Design',75000],['Frontend Development',90000],['WhatsApp Order Flow',25000],['Bank Transfer Card',8000],['Downloadable Order Slip',12000],['Deployment and Domain',30000]]},
+ {id:'growth',name:'Growth',tag:'Sales Engine + Real Payments',price:400000,usd:280,weeks:5,fill:.67,rec:true,
   blurb:'Everything in Starter, plus a proper checkout with real payment (card or bank transfer). Automatic receipts on every successful payment, and an owner dashboard tracking totals by day, week and month.',
   short:['Real payment checkout, card and bank transfer','Receipts emailed automatically','Owner dashboard: day, week and month totals','Everything in Starter'],
   inc:['Real payment checkout (card and bank transfer via Paystack or Flutterwave)','Receipts generated and emailed automatically','Owner dashboard with day, week and month totals','Everything in Starter'],
   pages:['Everything in Starter','Checkout and Payment','Owner Dashboard'],
-  brk:[['UI/UX Design',65000],['Frontend Development',75000],['Backend and Database',60000],['Payment Integration',65000],['Automatic Receipts',35000],['Owner Dashboard',50000],['Deployment and Domain',40000]]},
+  brk:[['UI/UX Design',65000],['Frontend Development',75000],['Backend and Database',70000],['Payment Integration',65000],['Automatic Receipts',35000],['Owner Dashboard',50000],['Deployment and Domain',40000]]},
  {id:'complete',name:'Complete',tag:'Retail + Wholesale Marketplace',price:650000,usd:455,weeks:8,fill:1,
   blurb:'The full system. One storefront, two ways to buy: retail customers shop normally, bulk buyers get automatic wholesale pricing by quantity with no approval step. Wholesale orders generate formal invoices, retail orders generate receipts.',
   short:['Customer accounts, sign-up and login','Retail and wholesale pricing by quantity','Auto invoices (wholesale) and receipts (retail)','Order and inventory tracking dashboard'],
@@ -886,7 +887,7 @@ const TIERS=[
   brk:[['UI/UX Design',70000],['Frontend Development',90000],['Accounts and Authentication',65000],['Backend and Database',85000],['Payment Integration',80000],['Retail/Wholesale Pricing Engine',85000],['Invoicing and Receipts',70000],['Owner Dashboard',65000],['Deployment and Domain',40000]]}
 ];
 TIERS.forEach(t=>{t.sum=t.brk.reduce((a,b)=>a+b[1],0);if(t.sum!==t.price)console.warn('Line items for '+t.name+' add up to '+t.sum+' but the package price is '+t.price)});
-const ROWS=[['Brand showroom and education',1,1,1],['WhatsApp order flow',1,0,0],['Real payment checkout',0,1,1],['Automatic receipts',0,1,1],['Owner dashboard',0,1,1],['Customer accounts',0,0,1],['Retail and wholesale pricing',0,0,1],['Auto-generated invoices',0,0,1],['12 months free maintenance',1,1,1]];
+const ROWS=[['Brand showroom and education',1,1,1],['WhatsApp order flow',1,0,0],['Bank transfer details',1,1,1],['Downloadable order slip',1,1,1],['Real payment checkout',0,1,1],['Automatic receipts',0,1,1],['Owner dashboard',0,1,1],['Customer accounts',0,0,1],['Retail and wholesale pricing',0,0,1],['Auto-generated invoices',0,0,1],['12 months free maintenance',1,1,1]];
 const TERMS=[
  ['Deposit first','50% deposit before work begins; balance due on delivery.'],
  ['Two rounds of revisions','Up to 2 rounds of revisions are included.'],
@@ -1113,7 +1114,7 @@ function start(){if(GO.ready)return;GO.ready=true;document.body.classList.add('r
 /* ---------- live order walkthrough ---------- */
 const ENG=[
  ['A customer finds you','They land on a showroom that feels like Sup-Alive: your story, your blends, the why-hibiscus education.',[1,1,1]],
- ['They fill a cart','A cart with live totals. On Starter the order goes straight to your WhatsApp to confirm and pay.',[1,1,1]],
+ ['They fill a cart','A cart with live totals. On Starter the order goes to your WhatsApp with bank transfer details and a downloadable order slip.',[1,1,1]],
  ['They pay for real','Card or bank transfer through Paystack or Flutterwave. Confirmed in seconds, no chasing screenshots.',[0,1,1]],
  ['The paper writes itself','A receipt is generated and emailed the moment payment lands. Every order leaves a clean record.',[0,1,1]],
  ['You watch it add up','Your own dashboard: sales by day, week and month, without opening a spreadsheet.',[0,1,1]],
